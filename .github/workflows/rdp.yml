@@ -15,7 +15,7 @@ jobs:
     - name: AUTENTIFIKASI
       run: .\ngrok\ngrok.exe authtoken 239HvwONmmL5wvPtNFqGQ1eIPiB_9B17BAZTKSZuPHpRCo2t
     - name: ENABLE TS
-      run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\TerminalServer'-name "fDenyTSConnections" -Value 0
+      run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\TerminalServer' -name "fDenyTSConnections" -Value 0
     - run: Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
     - run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\TerminalServer\Winstations\RDP-Tcp' -name "UserAuthentication" -Value 1
     - run: Set-LocalUser -Name "runneradmin" -Password (ConvertTo-SecureString -AsPlainText "P@ssw0rd!" -Force)
